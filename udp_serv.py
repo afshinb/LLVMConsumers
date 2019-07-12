@@ -1,4 +1,5 @@
 import socket
+from binascii import *
 
 UDP_IP = "127.0.0.1"
 UDP_PORT = 12012
@@ -9,4 +10,4 @@ sock.bind((UDP_IP, UDP_PORT))
 
 while True:
     data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
-    print "received message:", data
+    print "received message:", hexlify(data)
